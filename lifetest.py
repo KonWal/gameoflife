@@ -8,8 +8,11 @@ class test_cell_updates(unittest.TestCase):
     def test_cell_update_birth(self):
         self.assertEqual(cell_update(0,3), 1)
 
-    def test_cell_update(self):
+    def test_cell_update_survive(self):
         self.assertEqual(cell_update(1,3), 1)
+
+    def test_cell_update_underpop(self):
+        self.assertEqual(cell_update(1,1),0)
 
 def cell_update(cell, neighbours):
     if neighbours == 3:
