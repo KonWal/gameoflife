@@ -9,13 +9,14 @@ class test_cell_updates(unittest.TestCase):
         self.assertEqual(cell_update(0,3), 1)
 
     def test_cell_update_survive(self):
-        self.assertEqual(cell_update(1,3), 1)
+        self.assertEqual(cell_update(1,2), 1)
 
     def test_cell_update_underpop(self):
         self.assertEqual(cell_update(1,1),0)
 
+
 def cell_update(cell, neighbours):
-    if neighbours == 3:
+    if neighbours == 3 or neighbours == 2:
         return 1
     else:
         return 0
